@@ -1,0 +1,15 @@
+<library path="lib/libEuclidArduinoWrapper">
+  <class name="euclid_arduino_wrapper/euclidArduinoWrapper" type="euclid_arduino_wrapper::EuclidArduinoWrapper" base_class_type="nodelet::Nodelet">
+  <description>
+    arduino wrapper for realsense nodelet
+  </description>
+  </class>
+</library>
+<library path="lib/libEuclidArduinoMotorConfiguration">
+  <class name="euclid_arduino_wrapper/EuclidArduinoMotorConfiguration" type="euclid_arduino_wrapper::EuclidArduinoMotorConfiguration" base_class_type="nodelet::Nodelet">
+  <description>
+    arduino motor config
+  </description>
+  </class>
+</library>
+  

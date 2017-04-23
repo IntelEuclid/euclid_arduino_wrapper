@@ -1,0 +1,11 @@
+<launch>
+  <arg name="port" default="/dev/ttyUSB0"/>
+  <node pkg="nodelet" type="nodelet" name="standalone_arduino_euclid_nodelet"  args="manager" output="screen"/>
+
+  <!-- node pkg="nodelet" type="nodelet" name="EuclidArduinoWrapper" args="load euclid_arduino_wrapper/EuclidArduinoWrapper standalone_arduino_euclid_nodelet" output="screen"/ -->
+  <node pkg="nodelet" type="nodelet" name="EuclidArduinoMotorConfiguration" args="load euclid_arduino_wrapper/EuclidArduinoMotorConfiguration standalone_arduino_euclid_nodelet" output="screen"/>
+  <node pkg="rosserial_python" type="serial_node.py" name="serial_node" output="screen">
+	<param name="port" value="$(arg port)"/>
+	</node>
+	<node pkg="topic_tools" type="relay" name="relay" args="/cmd_vel /cmd_vel_mux/input/teleop" />
+</launch>
